@@ -1,0 +1,83 @@
+<Driver1>
+
+  <KtildeMatrixInverse>
+    <Element>
+      <KElementInfo>
+        <JTimesTwo>2</JTimesTwo>
+        <KIndex>L(0) 2S(2) chan(0)</KIndex>
+        <KIndex>L(0) 2S(2) chan(0)</KIndex>
+      </KElementInfo>
+      <FitForm><Polynomial><Degree>3 </Degree></Polynomial></FitForm>
+      <!-- <FitForm><SumOfPoles><NumberOfPoles>2</NumberOfPoles></SumOfPoles></FitForm> -->
+    </Element>
+    <Element>
+      <KElementInfo>
+        <JTimesTwo>2</JTimesTwo>
+        <KIndex>L(0) 2S(2) chan(0)</KIndex>
+        <KIndex>L(0) 2S(2) chan(1)</KIndex>
+      </KElementInfo>
+      <FitForm><Polynomial><Degree>3 </Degree></Polynomial></FitForm>
+      <!-- <FitForm><SumOfPoles><NumberOfPoles>2</NumberOfPoles></SumOfPoles></FitForm> -->
+    </Element>
+    <Element>
+      <KElementInfo>
+        <JTimesTwo>2</JTimesTwo>
+        <KIndex>L(0) 2S(2) chan(1)</KIndex>
+        <KIndex>L(0) 2S(2) chan(1)</KIndex>
+      </KElementInfo>
+      <FitForm><Polynomial><Degree>3 </Degree></Polynomial></FitForm>
+      <!-- <FitForm><SumOfPoles><NumberOfPoles>2</NumberOfPoles></SumOfPoles></FitForm> -->
+    </Element>
+  </KtildeMatrixInverse>
+
+  <BoxQuantization>
+    <TotalMomentumRay>ar</TotalMomentumRay> 
+    <TotalMomentumIntSquared>0</TotalMomentumIntSquared>
+    <LGIrrep>T1g</LGIrrep>
+    <DecayChannel>
+      <Lmax>0</Lmax>
+      <DecayChannelInfo>
+        <Particle1Name>pion</Particle1Name>
+        <Spin1TimesTwo>0</Spin1TimesTwo>
+        <Particle2Name>J/psi</Particle2Name>
+        <Spin2TimesTwo>2</Spin2TimesTwo>
+        <IntrinsicParities>same</IntrinsicParities>
+      </DecayChannelInfo>
+    </DecayChannel>
+    <DecayChannel>
+      <Lmax>0</Lmax>
+      <DecayChannelInfo>
+        <Particle1Name>D</Particle1Name>
+        <Spin1TimesTwo>0</Spin1TimesTwo>
+        <Particle2Name>Dstar</Particle2Name>
+        <Spin2TimesTwo>2</Spin2TimesTwo>
+        <IntrinsicParities>same</IntrinsicParities>
+      </DecayChannelInfo>
+    </DecayChannel>
+  </BoxQuantization>
+
+  <DoValue>
+    <LengthReference>84.8</LengthReference>
+    <LabEnergyOverReference>0.56466</LabEnergyOverReference>
+    <ChannelMasses>
+      <DecayChannel>
+        <Mass1OverRef>0.050352</Mass1OverRef>
+        <Mass2OverRef>0.449531</Mass2OverRef>
+      </DecayChannel>
+    </ChannelMasses>
+    <OmegaMu>8.0</OmegaMu>
+  </DoValue>
+
+  <DoValue>
+    <LengthReference>84.8</LengthReference>
+    <LabEnergyOverReference>0.5983</LabEnergyOverReference>
+    <ChannelMasses>
+      <DecayChannel>
+        <Mass1OverRef>0.273010</Mass1OverRef>
+        <Mass2OverRef>0.293391</Mass2OverRef>
+      </DecayChannel>
+    </ChannelMasses>
+    <OmegaMu>8.0</OmegaMu>
+  </DoValue>
+
+</Driver1>

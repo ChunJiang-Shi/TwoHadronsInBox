@@ -73,6 +73,19 @@ for (list<XMLHandler>::iterator it=testxml.begin();it!=testxml.end();it++,count+
    cout << "      Ecm/mref = "<<Ecm<<endl;
    cout << "            mu = "<<mu<<endl;
    cout << "         Omega = "<< BQ.getOmegaFromElab(mu,Elab_over_mref)<<endl<<endl;
+   ComplexHermitianMatrix B;
+   RealSymmetricMatrix Kinv_output;
+   BQ.getBoxMatrixFromElab(Elab_over_mref, B);
+   BQ.getKtildeOrInverseFromEcm(Elab_over_mref, Kinv_output);
+   // if (BQ.m_Kinv!=0){
+   //      cout << "BQ.m_Kinv!=0" <<endl;
+   // }
+   cout << "  Kinv_out = ("<< Kinv_output.get(0,0)<< Kinv_output.get(0,1)<< ")\n" 
+      << "             ("<< Kinv_output.get(1,0)<< Kinv_output.get(1,1)<< ")\n"
+            <<endl<<endl;
+   cout << "         B = ("<< B.get(0,0)<< B.get(0,1)<< ")\n" 
+      << "             ("<< B.get(1,0)<< B.get(1,1)<< ")\n"
+            <<endl<<endl;
    }
 
 return 0;

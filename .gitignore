@@ -1,0 +1,7 @@
+.vscode
+build
+!build/Makefile
+test
+source/drive*
+!source/drive1.cc
+!source/drive2.cc

@@ -31,14 +31,14 @@ CD_SX2MAX_VALUE=3
 
 
 CXX = g++
-CXXFLAGS = -O3 -std=c++11 -Wall -I../source
+CXXFLAGS = -g -O3 -std=c++11 -Wall -I../source  -fopenmp
 #CXXFLAGS = -O3 -std=c++0x -Wall
 DFLAGS = -DAR_LMAX=$(AR_LMAX_VALUE) -DOA_LMAX=$(OA_LMAX_VALUE) \
          -DPD_LMAX=$(PD_LMAX_VALUE) -DCD_LMAX=$(CD_LMAX_VALUE) \
          -DAR_SX2MAX=$(AR_SX2MAX_VALUE) -DOA_SX2MAX=$(OA_SX2MAX_VALUE) \
          -DPD_SX2MAX=$(PD_SX2MAX_VALUE) -DCD_SX2MAX=$(CD_SX2MAX_VALUE)
-LDFLAGS =
-LIBS=-llapack
+LDFLAGS = 
+LIBS=-llapack -lgsl 
 
 SRCS = \
   box_matrix.cc      \
@@ -68,13 +68,14 @@ INCS = \
   matrix.h         \
   utils.h          \
   xml_handler.h    \
-  zeta.h
+  zeta.h           \
+  npy.h
 
 OBJS = $(SRCS:.cc=.o)
 
 .SECONDARY: $(OBJS)
 
-all:  driver1 driver2
+all:  driver1 driver2 mydrive1 mydrive2
 
 driver%: driver%.cc $(OBJS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o driver$* ../source/driver$*.cc $(OBJS) $(LIBS) 
@@ -105,4 +106,4 @@ box_matrix_cd2.o: box_matrix_cd2.cc $(INCS) Makefile
 	$(CXX) $(CXXFLAGS) $(DFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o driver1 driver2
+	rm -f *.o driver1 driver2 driver3
